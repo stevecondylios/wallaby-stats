@@ -54,9 +54,28 @@ team_data %>% head
 # 5         GB Smith 2000-2013 111    93  18  45     9    0    0    0   0  65   44    2 59.45 NA
 # 6        MJ Giteau 2002-2016 103    89  14 698    30  106  108    4   0  59   42    2 58.25 NA
 
+# Tidying
+team_data[, 16] <- NULL # remove column of NAs
 
 
+
+# Summary stats
+
+team_data %>% head
+
+team_data <- team_data %>% separate(Span, c("First", "Last"), sep = "-")
+
+team_data %>% filter(Last >= 2000)
+
+
+
+
+
+# Visualisations
 team_data$Mat %>% hist(20)
+
+
+
 
 
 
